@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAYZ TOOL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(to bottom right, #2b2f3c, #14161c);
+            color: #eaeaea;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            height: 100vh;
+            padding: 20px;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+            overflow-y: auto; /* Позволяет прокрутку по вертикали */
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 700px;
+            margin-bottom: 40px;
+            transition: transform 0.3s ease;
+            max-height: 90vh; /* Ограничиваем максимальную высоту контейнера */
+            overflow-y: auto; /* Позволяет прокрутку внутри контейнера */
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        .welcome {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #ffcc00;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .description {
+            margin: 20px 0;
+            font-size: 1.2em;
+        }
+
+        .description h2 {
+            color: #ffcc00;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .benefits {
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .benefit {
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+
+        .benefit:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .button {
+            display: inline-block;
+            margin: 20px 10px;
+            padding: 15px 30px;
+            background: #ffcc00;
+            color: #14161c;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background: #e6b800;
+            transform: translateY(-2px);
+        }
+
+        .socials {
+            margin-top: 20px;
+        }
+
+        .socials a {
+            display: block;
+            color: #ffcc00;
+            text-decoration: none;
+            margin: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        .socials a:hover {
+            color: #e6b800;
+            text-decoration: underline;
+        }
+
+        .faq {
+            text-align: left;
+            margin-top: 40px;
+        }
+
+        .faq h3 {
+            margin: 20px 0 10px;
+            color: #ffcc00;
+        }
+
+        .faq-item {
+            margin: 10px 0;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #eaeaea;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-item:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .faq-answer {
+            display: none;
+            margin-left: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-left: 4px solid #ffcc00;
+            border-radius: 5px;
+        }
+
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .arrow.open {
+            transform: rotate(90deg);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Плавная прокрутка */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="welcome">LAYZ FAQ</h1>
+        <div class="description">
+            <h2>LAYZ TOOL</h2>
+            <p>Ваш многофункциональный инструмент, предоставляющий доступ к 6 ТБ баз данных, которые хранятся на сервере.</p>
+        </div>
+        <div class="benefits">
+            <div class="benefit">✨ Быстрый поиск данных.</div>
+            <div class="benefit">🔒 Безопасный доступ к вашим данным.</div>
+            <div class="benefit">📊 Удобный интерфейс для работы.</div>
+            <div class="benefit">💡 Полезные советы и рекомендации.</div>
+            <div class="benefit">🚀 Быстрая поддержка пользователей.</div>
+            <div class="benefit">📈 Актуальные данные и обновления.</div>
+        </div>
+        <a href="#faq" class="button">Часто задаваемые вопросы</a>
+        <div class="socials">
+            <a href="https://t.me/layzsoftware">Подписаться на наш канал</a>
+            <a href="https://t.me/layzowner">Связаться с нами</a>
+        </div>
+        <div class="faq" id="faq">
+            <h3>Часто задаваемые вопросы</h3>
+            <div class="faq-item">
+                <span>📢 Что такое LayzTool?</span>
+                <span class="arrow">➔</span>
+            </div>
+            <div class="faq-answer">LayzTool - это мощный инструмент для поиска и работы с большими объемами данных.</div>
+            <div class="faq-item">
+                <span>💱 Можно ли получить возврат средств после покупки?</span>
+                <span class="arrow">➔</span>
+            </div>
+            <div class="faq-answer">Да, возврат средств возможен в течение 14 дней при соблюдении условий возврата.</div>
+            <div class="faq-item">
+                <span>🔎 Какие данные можно собирать с помощью LayzTool?</span>
+                <span class="arrow">➔</span>
+            </div>
+            <div class="faq-answer">С помощью LayzTool можно собирать данные из открытых источников по различным категориям.</div>
+            <div class="faq-item">
+                <span>👮‍♀️ Несу ли я ответственность за нарушение законов с помощью LayzTool?</span>
+                <span class="arrow">➔</span>
+            </div>
+            <div class="faq-answer">Да, пользователь несет полную ответственность за свои действия.</div>
+            <div class="faq-item">
+                <span>📸 Можно ли использовать LayzTool в коммерческих целях?</span>
+                <span class="arrow">➔</span>
+            </div>
+            <div class="faq-answer">Да, LayzTool можно использовать для коммерческих целей при соблюдении лицензии.</div>
+            <div class="faq-item">
+                <span>✉️ Как получить техническую поддержку?</span>
+                <span class="arrow">➔</span>
+            </div>
+            <div class="faq-answer">Техническую поддержку можно получить через наш канал или службу поддержки.</div>
+            <div class="faq-item">
+                <span>🆘 Что делать, если программа не работает?</span>
+                <span class="arrow">➔</span>
+            </div>
+            <div class="faq-answer">Пожалуйста, свяжитесь с нашей службой поддержки для решения проблем.</div>
+            <div class="faq-item">
+                <span>💻 На каких платформах работает LayzTool?</span>
+                <span class="arrow">➔</span>
+            </div>
+            <div class="faq-answer">LayzTool совместим с Windows, macOS и Linux.</div>
+        </div>
+    </div>
+    <script>
+        // Закрытие ответов на вопросы по клику и смена стрелочки
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
+                
+                // Смена стрелочки
+                const arrow = this.querySelector('.arrow');
+                arrow.classList.toggle('open');
+                arrow.textContent = arrow.classList.contains('open') ? '▼' : '➔';
+            });
+        });
+    </script>
+</body>
+</html>
+
